@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #1a1a1a;
+    --text: #f2f0ea;
+    --muted: #8f8c84;
+    --line: #333330;
+    --accent: #b28a4f;
+    --accent-solid: #776b38;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Fraunces', serif;
+  }
+  .page {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+  }
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  a.portfolio-hero {
+    display: block;
+    margin: 28px 0 56px;
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .portfolio-frame {
+    position: relative;
+    width: 100%;
+    padding-top: 52%;
+    overflow: hidden;
+    background: #000;
+  }
+  .portfolio-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250%;
+    height: 250%;
+    transform: scale(0.4);
+    transform-origin: 0 0;
+    border: none;
+    pointer-events: none;
+  }
+  .portfolio-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    background: var(--accent-solid);
+    color: #fff;
+  }
+  .portfolio-cta-text {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .portfolio-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+  .portfolio-title {
+    font-size: clamp(1.3rem, 3.5vw, 1.75rem);
+    font-weight: 500;
+  }
+  .portfolio-arrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+  }
+  a.portfolio-hero:hover .portfolio-arrow {
+    transform: translate(4px, -4px);
+  }
+  .heading-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 0 0 40px;
+  }
+  h1 {
+    font-weight: 600;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  h1 .dot { color: var(--accent); }
+  .lede {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0;
+  }
+  .group-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 36px;
+    padding-bottom: 8px;
+  }
+  a.row {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--text);
+  }
+  nav.index a.row:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+  .row-index {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    flex: none;
+    width: 2ch;
+  }
+  .row-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .row-url {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .row-title {
+    display: block;
+    font-size: clamp(1.6rem, 5.5vw, 3rem);
+    font-weight: 500;
+    line-height: 1;
+    transition: color 0.15s ease;
+  }
+  a.row:hover .row-title {
+    color: var(--accent);
+  }
+  .row-arrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    color: var(--muted);
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  a.row:hover .row-arrow {
+    color: var(--accent);
+    transform: translateX(4px);
+  }
+  footer {
+    margin-top: 60px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="masthead">
+      <span>TJ Vining</span>
+      <span>Index</span>
+    </div>
+
+    <a class="portfolio-hero" href="https://tjvining.com" target="_blank" rel="noopener">
+      <div class="portfolio-frame">
+        <iframe src="https://tjvining.com" tabindex="-1" aria-hidden="true" loading="lazy"></iframe>
+      </div>
+      <div class="portfolio-cta">
+        <div class="portfolio-cta-text">
+          <span class="portfolio-title">Looking for my portfolio?</span>
+          <span class="portfolio-eyebrow">Click to continue</span>
+        </div>
+        <span class="portfolio-arrow">↗</span>
+      </div>
+    </a>
+
+    <div class="heading-row">
+      <h1>Tools<span class="dot">.</span></h1>
+      <p class="lede">A small collection of things I've built.</p>
+    </div>
+
+    <nav class="index">
+      <div class="group-label">Travel Planners</div>
+      <a class="row" href="https://scotland.tjvining.com" target="_blank" rel="noopener">
+        <span class="row-index">01</span>
+        <span class="row-info">
+          <span class="row-title">Scotland Trip Planner</span>
+          <span class="row-url">scotland.tjvining.com</span>
+        </span>
+        <span class="row-arrow">→</span>
+      </a>
+      <a class="row" href="https://skitrip.tjvining.com" target="_blank" rel="noopener">
+        <span class="row-index">02</span>
+        <span class="row-info">
+          <span class="row-title">Ski Trip Planner</span>
+          <span class="row-url">skitrip.tjvining.com</span>
+        </span>
+        <span class="row-arrow">→</span>
+      </a>
+
+      <div class="group-label">Other Tools</div>
+      <a class="row" href="https://passport.tjvining.com" target="_blank" rel="noopener">
+        <span class="row-index">03</span>
+        <span class="row-info">
+          <span class="row-title">Dive Bar Passport</span>
+          <span class="row-url">passport.tjvining.com</span>
+        </span>
+        <span class="row-arrow">→</span>
+      </a>
+    </nav>
+
+    <footer>tools.tjvining.com</footer>
+  </div>
+</body>
+</html>
