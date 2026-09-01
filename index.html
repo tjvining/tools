@@ -130,7 +130,7 @@
     padding-top: 36px;
     padding-bottom: 8px;
   }
-  a.row {
+  .row {
     display: flex;
     align-items: baseline;
     gap: 20px;
@@ -138,8 +138,9 @@
     border-top: 1px solid var(--line);
     text-decoration: none;
     color: var(--text);
+    position: relative;
   }
-  nav.index a.row:last-child {
+  nav.index .row:last-child {
     border-bottom: 1px solid var(--line);
   }
   .row-index {
@@ -178,6 +179,39 @@
   a.row:hover .row-arrow {
     color: var(--accent);
     transform: translateX(4px);
+  }
+  .row-disabled {
+    cursor: default;
+    opacity: 0.4;
+    transition: opacity 0.15s ease;
+  }
+  .row-disabled:hover {
+    opacity: 0.65;
+  }
+  .row-disabled .row-arrow {
+    visibility: hidden;
+  }
+  .row-tooltip {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 6px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%) translateY(6px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+  .row-disabled:hover .row-tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateY(0);
   }
   footer {
     margin-top: 60px;
@@ -234,14 +268,15 @@
       </a>
 
       <div class="group-label">Other Tools</div>
-      <a class="row" href="https://passport.tjvining.com" target="_blank" rel="noopener">
+      <div class="row row-disabled">
         <span class="row-index">03</span>
         <span class="row-info">
           <span class="row-title">Dive Bar Passport</span>
           <span class="row-url">passport.tjvining.com</span>
         </span>
         <span class="row-arrow">→</span>
-      </a>
+        <span class="row-tooltip">Coming soon</span>
+      </div>
     </nav>
 
     <footer>tools.tjvining.com</footer>
